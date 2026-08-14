@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "ambush-streams": {
-      "type": "http",
-      "url": "https://api.ambush.ai/mcp"
-    }
-  }
-}
