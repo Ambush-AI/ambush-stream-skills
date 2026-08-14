@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "ambush-streams",
+  "displayName": "Ambush Streams",
+  "version": "0.1.0",
+  "description": "Create, review, and manage personalized Ambush news streams from Claude Code.",
+  "author": {
+    "name": "Ambush AI",
+    "email": "support@ambush.ai",
+    "url": "https://ambush.ai"
+  },
+  "homepage": "https://ambush.ai",
+  "repository": "https://github.com/Ambush-AI/ambush-stream-skills",
+  "keywords": ["ambush", "streams", "news", "monitoring", "alerts"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}
