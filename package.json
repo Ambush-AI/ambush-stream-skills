@@ -1,0 +1,55 @@
+{
+  "name": "@ambush-ai/ambush-streams",
+  "version": "0.1.0",
+  "description": "Ambush Streams for OpenClaw: personalized news streams with requester-scoped OAuth.",
+  "type": "module",
+  "files": [
+    "index.js",
+    "openclaw.plugin.json",
+    "skills"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "keywords": [
+    "openclaw",
+    "ambush",
+    "news",
+    "monitoring",
+    "mcp"
+  ],
+  "homepage": "https://ambush.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ambush-AI/ambush-stream-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ambush-AI/ambush-stream-skills/issues"
+  },
+  "engines": {
+    "node": ">=22.22.3 <23 || >=24.15.0 <25 || >=25.9.0"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.8.1"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.js"
+    ],
+    "install": {
+      "clawhubSpec": "clawhub:@ambush-ai/ambush-streams",
+      "defaultChoice": "clawhub",
+      "minHostVersion": ">=2026.8.1"
+    },
+    "compat": {
+      "pluginApi": ">=2026.8.1"
+    },
+    "build": {
+      "openclawVersion": "2026.8.1"
+    },
+    "release": {
+      "publishToClawHub": true,
+      "publishToNpm": false
+    }
+  }
+}
