@@ -1,0 +1,26 @@
+{
+  "id": "ambush-streams",
+  "name": "Ambush Streams",
+  "description": "Create, process, deliver, review, and manage personalized Ambush news streams.",
+  "activation": {
+    "onStartup": false
+  },
+  "skills": [
+    "./skills"
+  ],
+  "mcpServers": {
+    "ambush-streams": {
+      "url": "https://api.ambush.ai/mcp",
+      "transport": "streamable-http",
+      "auth": "oauth",
+      "oauth": {
+        "identity": "per-requester"
+      }
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
