@@ -1,0 +1,13 @@
+interface:
+  display_name: "Manage Ambush Feeds"
+  short_description: "Create and manage personalized news feeds"
+  default_prompt: "Use $manage-ambush-feeds to review and manage my Ambush feeds."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "ambush-feeds"
+      description: "Ambush Feeds MCP server"
+      transport: "streamable_http"
+      url: "https://api.ambush.ai/mcp"
+policy:
+  allow_implicit_invocation: true
