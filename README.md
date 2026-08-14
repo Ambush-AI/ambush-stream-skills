@@ -91,6 +91,54 @@ The skill declares the production Ambush Streams MCP server at
 account with OAuth when prompted. Other agent hosts may require configuring that
 remote MCP server separately.
 
+## Install in eve
+
+An [official eve integration](https://github.com/vercel/eve/issues/2159) is
+proposed to install the skill and OAuth MCP connection together with
+`eve add ambush-streams`.
+
+Until that registry item and the pending
+[skills.sh re-index](https://github.com/vercel-labs/skills/issues/1961) land,
+install the current skill directly from GitHub into eve's native skill path:
+
+```sh
+npx skills add Ambush-AI/ambush-stream-skills \
+  --skill manage-ambush-streams \
+  --agent eve \
+  --yes
+```
+
+Then create a Vercel Connect connector from the linked eve project:
+
+```sh
+npx vercel@latest connect create https://api.ambush.ai/mcp \
+  --name ambush-streams \
+  --yes
+```
+
+That service and name produce the connector UID
+`api.ambush.ai/ambush-streams`. Use it in
+`agent/connections/ambush-streams.ts`:
+
+```ts
+import { connect } from "@vercel/connect/eve";
+import { defineMcpClientConnection } from "eve/connections";
+
+export default defineMcpClientConnection({
+  url: "https://api.ambush.ai/mcp",
+  description:
+    "Ambush Streams: create and manage personalized real-time news streams, review emissions, and route future events to connected destinations.",
+  auth: connect("api.ambush.ai/ambush-streams"),
+  approval: ({ toolName }) =>
+    toolName === "delete_feed" ? "user-approval" : "not-applicable",
+});
+```
+
+The generic Ambush OAuth connector currently supports user-scoped subjects, so
+each eve user authorizes their own Ambush account. Do not switch this connection
+to an app-scoped principal: headless runs without an authenticated user are not
+yet supported by this connector.
+
 ## Example requests
 
 - "Create a stream for material cybersecurity incidents affecting Canadian banks."
