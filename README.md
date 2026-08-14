@@ -2,7 +2,7 @@
 
 [![skills.sh](https://skills.sh/b/Ambush-AI/ambush-stream-skills)](https://skills.sh/Ambush-AI/ambush-stream-skills)
 
-Agent skills for creating, reviewing, and managing personalized Ambush news streams.
+Agent skills for creating, processing, delivering, reviewing, and managing personalized Ambush news streams.
 
 ## Install
 
@@ -32,9 +32,10 @@ remote MCP server separately.
 - "Create a stream for material cybersecurity incidents affecting Canadian banks."
 - "Pause my AI regulation stream."
 - "Show the five latest items from my semiconductor supply-chain stream."
+- "For every event from that stream, produce a trade thesis or no-trade result and send it to my Trade Ideas Slack channel."
 
 ## Included skills
 
 - [`manage-ambush-streams`](skills/manage-ambush-streams/SKILL.md): create, inspect,
-  update, pause, resume, and permanently delete streams, and review emitted news
-  items.
+  update, process, route, pause, resume, and permanently delete streams, and
+  review emitted news items.
