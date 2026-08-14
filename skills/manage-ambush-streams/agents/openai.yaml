@@ -1,7 +1,7 @@
 interface:
   display_name: "Manage Ambush Streams"
-  short_description: "Create and manage personalized news streams"
-  default_prompt: "Use $manage-ambush-streams to review and manage my Ambush streams."
+  short_description: "Manage stream processing and delivery"
+  default_prompt: "Use $manage-ambush-streams to review and manage my Ambush streams, event processing, and delivery routes."
 dependencies:
   tools:
     - type: "mcp"
