@@ -1,6 +1,6 @@
 {
   "name": "@ambush-ai/ambush-streams",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ambush Streams for OpenClaw: personalized news streams with requester-scoped OAuth.",
   "type": "module",
   "files": [

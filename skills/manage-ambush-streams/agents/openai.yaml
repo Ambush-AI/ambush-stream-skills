@@ -5,7 +5,7 @@ interface:
 dependencies:
   tools:
     - type: "mcp"
-      value: "ambush-feeds"
+      value: "ambush-streams"
       description: "Ambush Streams MCP server"
       transport: "streamable_http"
       url: "https://api.ambush.ai/mcp"
