@@ -21,7 +21,7 @@ test("declares a dependency-free OpenClaw plugin entry", async () => {
   assert.equal(typeof plugin.register, "function");
 });
 
-test("registers Ambush with requester-scoped OAuth and the existing v0.2 skill", async () => {
+test("registers Ambush with requester-scoped OAuth and the current API skill", async () => {
   const manifest = await readJson("openclaw.plugin.json");
   const server = manifest.mcpServers["ambush-streams"];
   const skill = await readFile(
