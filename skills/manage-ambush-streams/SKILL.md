@@ -1,6 +1,7 @@
 ---
 name: manage-ambush-streams
 description: Manage a user's Ambush news streams through the Ambush Streams MCP server. Use when the user wants to create, list, inspect, rename, change, pause, resume, or delete a stream; review emitted news; or process and deliver every new event to an existing destination.
+homepage: https://ambush.ai
 ---
 
 # Manage Ambush Streams
@@ -8,6 +9,14 @@ description: Manage a user's Ambush news streams through the Ambush Streams MCP 
 Use the Ambush Streams MCP tools to turn plain-language monitoring requests into personalized news streams and manage those streams throughout their lifecycle.
 
 The MCP API currently retains legacy tool and field identifiers such as `list_feeds`, `create_feed`, and `feed_id`. Use those exact identifiers when calling tools, but refer to the resulting resources as streams when speaking with the user.
+
+## Setup
+
+1. Create an Ambush account at https://app.ambush.ai/sign-up.
+2. Connect the Ambush Streams MCP server at `https://api.ambush.ai/mcp`. It uses OAuth, so the user signs in through the browser; there is no API key to copy.
+   - OpenClaw: `openclaw plugins install clawhub:@ambush-ai/ambush-streams` installs this skill and the MCP connection together.
+   - Other hosts: add `https://api.ambush.ai/mcp` as a remote Streamable HTTP MCP server with OAuth.
+3. Destinations (Slack, webhook, iMessage, Telegram) are set up in the Ambush app at https://app.ambush.ai; this skill routes streams to them.
 
 ## Operating rules
 
