@@ -7,8 +7,8 @@ Agent skills for creating, processing, delivering, reviewing, and managing perso
 ## Install in OpenClaw
 
 Ambush is packaged as a native OpenClaw plugin so the skill and its remote MCP
-server arrive together. Once the package clears the release gate below, install
-it with one command:
+server arrive together. It needs OpenClaw `>=2026.8.1`. Install it with one
+command:
 
 ```sh
 openclaw plugins install clawhub:@ambush-ai/ambush-streams
@@ -32,20 +32,13 @@ openclaw plugins inspect ambush-streams --runtime --json
 openclaw skills info manage-ambush-streams
 ```
 
-### Test from OpenClaw main
-
-Per-requester MCP OAuth is currently available on OpenClaw `main`. Until it is
-included in a stable OpenClaw release, test the package directly from GitHub:
+To test unreleased changes, install straight from GitHub:
 
 ```sh
 openclaw plugins install \
   git:github.com/Ambush-AI/ambush-stream-skills@main \
   --force
 ```
-
-Do not publish the ClawHub package before the first compatible stable OpenClaw
-release. The package requires OpenClaw `>=2026.8.1`, which deliberately excludes
-the earlier `2026.8.1-beta.1` build.
 
 ### Shared account for cron and headless runs
 
